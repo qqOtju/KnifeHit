@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f5a7fbbbbbe50429a9ebe1f28b1445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSkinChange: {fileID: 11400000, guid: c0609148fbb480d41919a6ca122f0f6e, type: 2}
+  knifeSprite: {fileID: 4060075855151384213}
 --- !u!114 &4060075855437676748
 MonoBehaviour:
   m_ObjectHideFlags: 0
