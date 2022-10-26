@@ -1,47 +1,70 @@
+using System;
 using UnityEngine;
 
 public class Knife : MonoBehaviour 
 {
     //TODO
     //Events:
-    //OnWoodHit(UnityEvent)
     //OnLoose(UnityEvent)
     
     //Dont reload scene on loose
     //Implement DOTween knife movement 
-    
+    [SerializeField] private GameEvent onLoose;
+    [SerializeField] private GameEvent onHit;
     [SerializeField] private float speed = 5f;
+    private GameObject _container;
+    private Transform _transform;
     private Rigidbody2D _myBody;
-    private KnifeSpawner _knifeSpawner;
-
-    private bool _hit;
-    void Start()
+    private Vector3 _rotation;
+    private bool _onWood;
+    private void Awake()
     {
-        _hit = false;
-        _myBody = GetComponent<Rigidbody2D>();
-        _knifeSpawner = GameObject.Find("Knife Spawner").GetComponent<KnifeSpawner>();
+        onLoose.Event += Disable;
     }
 
-    void Update() 
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !_hit)
+        _transform = transform;
+        _onWood = false;
+        _myBody = GetComponent<Rigidbody2D>();
+        _container = _transform.parent.gameObject;
+        _rotation = _transform.eulerAngles;
+    }
+
+    private void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && !_onWood)
             _myBody.velocity = new Vector3(0f, speed, 0f);
     }
-    void OnTriggerEnter2D(Collider2D target) 
+    private void OnTriggerEnter2D(Collider2D target) 
     {
         if(target.CompareTag("Wood")) 
         {
+            Debug.Log("Wood");
             gameObject.transform.SetParent(target.transform);
             _myBody.velocity = Vector3.zero;
-            //OnWoodHit?.Invoke();
-            _hit = true;
-            _knifeSpawner.SpawnKnife();
-            _knifeSpawner.IncrementScore();
+            _onWood = true;
+            onHit.Raise();
         }
         if(target.CompareTag("Knife")) 
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            Debug.Log("Knife");
+            if(!_onWood)
+                onLoose.Raise();
         }
+    }
+
+    private void OnEnable()
+    {
+        if(!_transform)
+            return;
+        gameObject.transform.SetParent(_container.transform);
+        _transform.eulerAngles = _rotation;
+        _onWood = false;
+    }
+
+    private void Disable()
+    {
+        gameObject.SetActive(false);
     }
 }
