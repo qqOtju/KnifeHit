@@ -1,16 +1,11 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Knife : MonoBehaviour 
 {
-    //TODO
-    //Events:
-    //OnLoose(UnityEvent)
-    
-    //Dont reload scene on loose
-    //Implement DOTween knife movement 
     [SerializeField] private GameEvent onLoose;
     [SerializeField] private GameEvent onHit;
+    [Min(1f)]
     [SerializeField] private float speed = 5f;
     private GameObject _container;
     private Transform _transform;

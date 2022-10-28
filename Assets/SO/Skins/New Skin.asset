@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438d13ce642174245bfa54159195f1c9, type: 3}
   m_Name: New Skin
   m_EditorClassIdentifier: 
+  skinName: Circle
   skin: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  isUnlocked: 1

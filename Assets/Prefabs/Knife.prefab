@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLoose: {fileID: 11400000, guid: bb2eac792205612479a4114d19fdc4c8, type: 2}
   onHit: {fileID: 11400000, guid: 7e0a6defeafe2114e9f2870a7d01e430, type: 2}
-  speed: 25
+  speed: 20
 --- !u!50 &4060075855437676739
 Rigidbody2D:
   serializedVersion: 4

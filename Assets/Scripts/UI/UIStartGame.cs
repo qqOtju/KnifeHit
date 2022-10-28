@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class UIStartGame : MonoBehaviour
 {
     [SerializeField] private UnityEvent onStartGame;
+    [SerializeField] private UnityEvent onLooseGame;
     [SerializeField] private GameEvent onLoose;
 
     private void Awake()
@@ -13,6 +14,7 @@ public class UIStartGame : MonoBehaviour
 
     private void OnLooseEvent()
     {
+        onLooseGame?.Invoke();
         gameObject.SetActive(true);
     }
 

@@ -1,12 +1,17 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Wood : MonoBehaviour
 {
-    //TODO
-    //Implement DOTween rotation
-    [SerializeField] private int speed = 3;
+    [SerializeField] private int speed = 10;
+    private Transform _transform;
+    private void Start()
+    {
+        _transform = transform;
+    }
+
     private void FixedUpdate() 
     {
-        transform.Rotate(0f, 0f, speed);
+        _transform.DORotate(_transform.eulerAngles + new Vector3(0,0, speed), 1);
     }
 }

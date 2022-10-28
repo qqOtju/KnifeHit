@@ -8,12 +8,14 @@ public class KnifePool : MonoBehaviour
     //Separate class for Score UI
     //Add knife shop 
     //Increment wood speed on knife hit
+    [Header("Object Pool")]
     [SerializeField] private GameObject knifePrefab;
     [SerializeField] private Transform container;
-    [SerializeField] private GameEvent onLoose;
-    [SerializeField] private GameEvent onHit;
     [SerializeField] private int poolCount = 20;
     [SerializeField] private bool autoExpand = true;
+    [Header("Events")]
+    [SerializeField] private GameEvent onLoose;
+    [SerializeField] private GameEvent onHit;
 
     private bool _gameIsStarted;
     private PoolMono _pool;
