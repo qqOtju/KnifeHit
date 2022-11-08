@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class SkinChanger : MonoBehaviour
 {
-    [SerializeField] private GameEventSkin onSkinChange;
+    [SerializeField] private GameStatsSO stats;
+    [SerializeField] private GameEvent onSkinChange;
     [SerializeField] private SpriteRenderer knifeSprite;
     private void Awake()
     {
         onSkinChange.Event += OnSkinChangeEvent;
+        OnSkinChangeEvent();
     }
-    private void OnSkinChangeEvent(SkinSO obj)
+    private void OnSkinChangeEvent()
     {
-        knifeSprite.sprite = obj.Skin;
+        knifeSprite.sprite = stats.CurrentSkin.Skin;
     }
 }

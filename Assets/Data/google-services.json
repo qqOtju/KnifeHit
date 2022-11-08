@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "673410201240",
+    "project_id": "knife-hit-79d8a",
+    "storage_bucket": "knife-hit-79d8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673410201240:android:43422baec10639d40642ed",
+        "android_client_info": {
+          "package_name": "com.Oleg.firebase.KnifeHit2D"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673410201240-mj2nfb9fe7lbvegnv4und8l0pb6381a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKBloeAPXkOpMJ-_xLFcYu-BgcsFqwLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673410201240-mj2nfb9fe7lbvegnv4und8l0pb6381a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

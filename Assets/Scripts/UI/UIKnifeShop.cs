@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,20 +6,32 @@ using UnityEngine.UI;
 public class UIKnifeShop : MonoBehaviour
 {
     [Header("Events")]
-    [SerializeField] private GameEventSkin onSkinChange;
+    [SerializeField] private GameEvent onSkinChange;
     [Space(20f)]
     [SerializeField] private SkinSO[] skins;
+    [Space(20f)]
+    [SerializeField] private GameStatsSO stats;
     [Header("UI")]
     [SerializeField] private Image knifeImage;
     [SerializeField] private TextMeshProUGUI knifeNameText;
     [SerializeField] private TextMeshProUGUI selectText;
     private int _index = 0;
 
+    private void OnEnable()
+    {
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         knifeImage.sprite = skins[_index].Skin;
         knifeNameText.text = skins[_index].Name;
-        selectText.text = skins[_index].Unlocked ? "Select" : "Unlock";
+        if (stats.CurrentSkin == skins[_index])
+        {
+            selectText.text = "Selected";
+            return;
+        }
+        selectText.text = stats.GetList().Contains(skins[_index]) ? "Select" : "Unlock";
     }
 
     public void NextSkin()
@@ -37,14 +50,18 @@ public class UIKnifeShop : MonoBehaviour
     }
     public void Select()
     {
-        if (skins[_index].Unlocked)
+        if (stats.GetList().Contains(skins[_index]))
         {
-            onSkinChange.Raise(skins[_index]);
+            stats.CurrentSkin = skins[_index];
+            onSkinChange.Raise();/*
+            selectText.text = "Selected";*/
+            UpdateUI();
         }
         else
         {
             //ADD
-            Debug.Log("ADD");
+            stats.AddToList(skins[_index]);
+            UpdateUI();
         }
     }
 }

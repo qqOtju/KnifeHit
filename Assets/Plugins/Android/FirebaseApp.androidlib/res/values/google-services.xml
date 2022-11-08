@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">673410201240</string>
+  <string name="google_storage_bucket" translatable="false">knife-hit-79d8a.appspot.com</string>
+  <string name="project_id" translatable="false">knife-hit-79d8a</string>
+  <string name="google_api_key" translatable="false">AIzaSyAHKBloeAPXkOpMJ-_xLFcYu-BgcsFqwLQ</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAHKBloeAPXkOpMJ-_xLFcYu-BgcsFqwLQ</string>
+  <string name="google_app_id" translatable="false">1:673410201240:android:43422baec10639d40642ed</string>
+  <string name="default_web_client_id" translatable="false">673410201240-mj2nfb9fe7lbvegnv4und8l0pb6381a2.apps.googleusercontent.com</string>
+</resources>
