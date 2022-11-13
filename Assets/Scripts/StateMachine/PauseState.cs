@@ -13,14 +13,12 @@ public class PauseState : State
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Pause");
         _onGameStatusEvent.Raise(GameStatus.Pause);
     }
 
     public override void Exit()
     {
         base.Exit();
-        Debug.Log("Restart");
         _onGameStatusEvent.Raise(GameStatus.Restart);
     }
 }

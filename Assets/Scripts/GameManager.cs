@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _stateMachine = new StateMachine();
-        Game = new GameState(this, _stateMachine, onGameStatusChange, onLoose);
+        Game = new GameState(this, _stateMachine, onGameStatusChange, onLoose, stats);
         Pause = new PauseState(this, _stateMachine, onGameStatusChange, onStart);
         _stateMachine.Initialize(Pause);
     }

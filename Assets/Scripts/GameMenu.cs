@@ -1,9 +1,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-
-//EditorWindow - не попадет в билд
-public class GameMenu : MonoBehaviour
+public class GameMenu : EditorWindow
 {
     [MenuItem("Game/Take screenshot")]
     public static void TakeScreenshot()

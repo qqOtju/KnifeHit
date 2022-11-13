@@ -119,10 +119,10 @@ TextureImporter:
       name: pngwing.com (2)_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 69
-        width: 510
-        height: 373
+        x: 123
+        y: 0
+        width: 389
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,24 +1,19 @@
-using UnityEngine;
-
 public class GameState : State
 {
     private readonly GameStatusEvent _onGameStatusEvent;
-    public GameState(GameManager gameManager, StateMachine stateMachine, GameStatusEvent onGameStatusChange, GameEvent onLoose)
+    private readonly GameStatsSO _gameStatsSo;
+    public GameState(GameManager gameManager, StateMachine stateMachine, GameStatusEvent onGameStatusChange, GameEvent onLoose, GameStatsSO gameStats)
         : base(gameManager, stateMachine, onGameStatusChange)
     {
         _onGameStatusEvent = onGameStatusChange;
+        _gameStatsSo = gameStats;
         onLoose.Event += () => stateMachine.ChangeState(gameManager.Pause);
     }
 
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Game");
+        _gameStatsSo.GamesCount++;
         _onGameStatusEvent.Raise(GameStatus.Game);
-    }
-    public override void Exit()
-    {
-        base.Exit();
-        Debug.Log("Game Exit");
     }
 }

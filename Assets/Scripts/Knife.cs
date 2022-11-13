@@ -15,6 +15,7 @@ public class Knife : MonoBehaviour
     [SerializeField] private ParticleSystem trail;
     [Min(1f)][Space(20f)]
     [SerializeField] private float speed = 5f;
+    
     private GameObject _container;
     private Transform _transform;
     private Rigidbody2D _rb;
@@ -48,13 +49,12 @@ public class Knife : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target) 
     {
         if (_onWood || _onKnife) return;
-            
+        trail.Stop();
         if(target.CompareTag("Wood"))
         {
             var mainModule = trail.main;
             mainModule.simulationSpeed = 15f;
             woodHitEffect.Play();
-            trail.Stop();
             gameObject.transform.SetParent(target.transform);
             _rb.velocity = Vector3.zero;
             _onWood = true;
