@@ -2,11 +2,13 @@ using System;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIKnifeShop : MonoBehaviour
 {
-    [Header("Events")]
+    [Header("Events")] 
+    public UnityEvent rewardedAd;
     [SerializeField] private GameEvent onSkinChange;
     [Space(20f)]
     [SerializeField] private SkinSO[] skins;
@@ -90,9 +92,9 @@ public class UIKnifeShop : MonoBehaviour
         }
         else
         {
-            //ADD
             stats.AddToList(skins[_index]);
             UpdateUI();
+            rewardedAd.Invoke();
         }
     }
 }
