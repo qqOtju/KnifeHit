@@ -52,26 +52,35 @@ public class Knife : MonoBehaviour
         trail.Stop();
         if(target.CompareTag("Wood"))
         {
-            var mainModule = trail.main;
-            mainModule.simulationSpeed = 15f;
-            woodHitEffect.Play();
-            gameObject.transform.SetParent(target.transform);
-            _rb.velocity = Vector3.zero;
-            _onWood = true;
-            onHit.Raise();
+            OnWoodHit(target);
         }
         if(target.CompareTag("Knife"))
         {
-            knifeHitEffect.Play();
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-            _rb.velocity = Vector3.zero;
-            _rb.AddForce(new Vector2(0, -3f), ForceMode2D.Impulse);
-            _rb.AddTorque(Random.Range(3f,6f), ForceMode2D.Impulse);
-            _rb.gravityScale = 1;
-            Debug.Log("A");
-            onLoose.Raise();
-            _onKnife = true;
+            OnKnifeHit();
         }
+    }
+
+    private void OnWoodHit(Collider2D target)
+    {
+        var mainModule = trail.main;
+        mainModule.simulationSpeed = 15f;
+        woodHitEffect.Play();
+        gameObject.transform.SetParent(target.transform);
+        _rb.velocity = Vector3.zero;
+        _onWood = true;
+        onHit.Raise();
+    }
+    private void OnKnifeHit()
+    {
+        knifeHitEffect.Play();
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        _rb.velocity = Vector3.zero;
+        _rb.AddForce(new Vector2(0, -3f), ForceMode2D.Impulse);
+        _rb.AddTorque(Random.Range(3f,6f), ForceMode2D.Impulse);
+        _rb.gravityScale = 1;
+        Debug.Log("A");
+        onLoose.Raise();
+        _onKnife = true;
     }
     private void OnEnable()
     {

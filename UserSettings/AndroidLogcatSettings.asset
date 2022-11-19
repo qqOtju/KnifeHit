@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5200b76ff4cfc48d",
         "name": "com.Oleg.firebase.KnifeHit2D",
-        "processId": 1800,
+        "processId": 22812,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,18 @@
             "deviceId": "5200b76ff4cfc48d",
             "name": "com.Oleg.firebase.KnifeHit2D",
             "processId": 1800,
+            "exited": false
+        },
+        {
+            "deviceId": "5200b76ff4cfc48d",
+            "name": "com.Oleg.firebase.KnifeHit2D",
+            "processId": 20606,
+            "exited": false
+        },
+        {
+            "deviceId": "5200b76ff4cfc48d",
+            "name": "com.Oleg.firebase.KnifeHit2D",
+            "processId": 22812,
             "exited": false
         }
     ],

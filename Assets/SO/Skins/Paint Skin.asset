@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Paint Skin
   m_EditorClassIdentifier: 
   skinName: Paint Skin
-  skin: {fileID: 963932719, guid: abfbec55924f5c34f8b9a9112c98ce94, type: 3}
+  skin: {fileID: 1198469748, guid: ff590832d6a939845b2d6ac35a004d05, type: 3}

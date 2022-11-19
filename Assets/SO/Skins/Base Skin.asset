@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Base Skin
   m_EditorClassIdentifier: 
   skinName: Basic Skin
-  skin: {fileID: -634976467, guid: 207e1d3dcd72f3d4db10083cb57c8d41, type: 3}
-  isUnlocked: 1
+  skin: {fileID: 2118594434, guid: ff590832d6a939845b2d6ac35a004d05, type: 3}
